@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+require_once __DIR__.'/admin.php';
 Route::get('/', function () {
     return to_route('register');
 });
