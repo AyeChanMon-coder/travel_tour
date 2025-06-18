@@ -9,11 +9,12 @@
                         <h3 class="text-center font-weight-light my-4">Create Account</h3>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="">
+                        <form method="post" action="{{ url('register') }}">
                             @csrf
                             <div class="mb-3">
                                 <input class="form-control @error('name') is-invalid @enderror" id="inputtName"
-                                    type="text" name="name" placeholder="Enter your name" />
+                                    type="text" name="name" placeholder="Enter your name"
+                                    value="{{ old('name') }}" />
                                 @error('name')
                                     <span class="text-danger">
                                         {{ $message }}
@@ -23,7 +24,8 @@
 
                             <div class="mb-3">
                                 <input class="form-control @error('email') is-invalid @enderror" id="inputEmail"
-                                    type="email" name="email" placeholder="name@example.com" />
+                                    type="email" name="email" placeholder="name@example.com"
+                                    value="{{ old('email') }}" />
                                 @error('email')
                                     <span class="text-danger">
                                         {{ $message }}
@@ -32,7 +34,8 @@
                             </div>
                             <div class="mb-3">
                                 <input class="form-control @error('phone') is-invalid @enderror" id="inputphone"
-                                    type="text" name="phone" placeholder="Enter your phone number" />
+                                    type="text" name="phone" placeholder="Enter your phone number"
+                                    value="{{ old('phone') }}" />
                                 @error('phone')
                                     <span class="text-danger">
                                         {{ $message }}
@@ -41,7 +44,8 @@
                             </div>
                             <div class="mb-3">
                                 <input class="form-control @error('address') is-invalid @enderror" id="inputaddress"
-                                    type="text" name="address" placeholder="Enter your address" />
+                                    type="text" name="address" placeholder="Enter your address"
+                                    value="{{ old('address') }}" />
                                 @error('address')
                                     <span class="text-danger">
                                         {{ $message }}
@@ -51,7 +55,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="mb-3 mb-md-0">
-                                        <input class="form-control @error('address') is-invalid @enderror"
+                                        <input class="form-control @error('password') is-invalid @enderror"
                                             id="inputPassword" type="password" name="password"
                                             placeholder="Create a password" />
                                         @error('password')

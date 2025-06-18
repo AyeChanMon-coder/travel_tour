@@ -35,15 +35,17 @@
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>
+                    <span class="text-dark">{{ Auth::user()->name }}</span></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!">Profile</a></li>
+                    <li><a class="dropdown-item" href="#!">User Messages</a></li>
                     <li><a class="dropdown-item" href="#!">Change Password</a></li>
                     <li><a class="dropdown-item" href="#!">Add New Admin</a></li>
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -75,6 +77,10 @@
                             Hotels
                         </a>
                         <a class="nav-link" href="tables.html">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-truck-plane"></i></div>
+                            Transport Vehicles
+                        </a>
+                        <a class="nav-link" href="tables.html">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
                             Services
                         </a>
@@ -82,7 +88,7 @@
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-note-sticky"></i></div>
                             Bookings
                         </a>
-                        <a class="nav-link" href="tables.html">
+                        <a class="nav-link" href="{{ route('logout') }}">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
                             Log Out
                         </a>

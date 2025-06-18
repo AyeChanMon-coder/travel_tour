@@ -9,17 +9,8 @@
                         <h3 class="text-center font-weight-light my-4">Login</h3>
                     </div>
                     <div class="card-body">
-                        <form>
-                            <div class="mb-3">
-                                <input class="form-control @error('name') is-invalid @enderror" id="inputtName" type="text"
-                                    name="name" placeholder="Enter your name" />
-                                @error('name')
-                                    <span class="text-danger">
-                                        {{ $message }}
-                                    </span>
-                                @enderror
-                            </div>
-
+                        <form method="post" action="{{ url('login') }}">
+                            @csrf
                             <div class="mb-3">
                                 <input class="form-control @error('email') is-invalid @enderror" id="inputEmail"
                                     type="email" name="email" placeholder="name@example.com" />
@@ -28,6 +19,17 @@
                                         {{ $message }}
                                     </span>
                                 @enderror
+                            </div>
+                            <div class="mb-3">
+                                <div class="mb-3 mb-md-0">
+                                    <input class="form-control @error('password') is-invalid @enderror" id="inputPassword"
+                                        type="password" name="password" placeholder="Type your password" />
+                                    @error('password')
+                                        <span class="text-danger">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                 <input type="submit" class="btn btn-primary w-100" value="Login">
